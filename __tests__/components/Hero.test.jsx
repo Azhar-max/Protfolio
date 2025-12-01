@@ -10,7 +10,7 @@ describe('Hero Component', () => {
     render(<Hero />)
     
     // Check if the main heading is rendered
-    expect(screen.getByText('Azhar Ali Shah')).toBeInTheDocument()
+    expect(screen.getByText('Azhar Ali Shah', { selector: '.name' })).toBeInTheDocument()
     
     // Check if the role is rendered
     expect(screen.getByText('BS Software Engineering Student — UET Mardan')).toBeInTheDocument()

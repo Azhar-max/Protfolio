@@ -19,7 +19,7 @@ describe('Projects Component', () => {
     
     // Check if filter buttons are rendered
     expect(screen.getByText('All')).toBeInTheDocument()
-    expect(screen.getByText('React')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'React' })).toBeInTheDocument()
   })
   
   test('renders project cards', () => {
