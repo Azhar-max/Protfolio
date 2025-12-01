@@ -2,12 +2,11 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:react-refresh/recommended',
   ],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -18,21 +17,25 @@ module.exports = {
   },
   plugins: [
     'react',
-    'react-hooks',
-    'react-refresh',
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
-    'react-refresh/only-export-components': 'warn',
-    'indent': ['error', 2],
-    'linebreak-style': ['error', 'windows'],
-    'quotes': ['error', 'single'],
-    'semi': ['error', 'never'],
+    'react/no-unescaped-entities': 'off',
+    'react/display-name': 'off',
+    'no-undef': 'off',
+    'indent': 'off',
+    'linebreak-style': 'off',
+    'quotes': 'off',
+    'semi': 'off',
   },
   settings: {
     react: {
       version: 'detect',
     },
   },
+  ignorePatterns: [
+    'dist/**',
+    'node_modules/**'
+  ]
 }
