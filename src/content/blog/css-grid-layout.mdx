@@ -1,0 +1,88 @@
+---
+title: Building Responsive Layouts with CSS Grid
+date: 2023-04-22
+excerpt: A comprehensive guide to creating flexible and responsive layouts using CSS Grid.
+tags: ["CSS", "Layout", "Responsive Design"]
+---
+
+# Building Responsive Layouts with CSS Grid
+
+CSS Grid is a powerful layout system that allows you to create complex, responsive layouts with ease. It's a two-dimensional system, meaning it can handle both columns and rows, unlike Flexbox which is largely a one-dimensional system.
+
+## What is CSS Grid?
+
+CSS Grid Layout is a two-dimensional layout system for the web. It lets you lay content out in rows and columns, and has many features that make building complex layouts straightforward.
+
+## Basic Concepts
+
+### Grid Container
+
+To create a grid container, you need to set the display property to grid or inline-grid:
+
+```css
+.container {
+  display: grid;
+}
+```
+
+### Grid Items
+
+Direct children of a grid container automatically become grid items:
+
+```html
+<div class="container">
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+</div>
+```
+
+## Creating Columns and Rows
+
+You can define columns and rows using the grid-template-columns and grid-template-rows properties:
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 100px 100px;
+}
+```
+
+Or using the fr unit for flexible layouts:
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px;
+}
+```
+
+## Grid Gap
+
+You can add gaps between grid items using grid-gap, row-gap, or column-gap:
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+```
+
+## Responsive Grids
+
+CSS Grid makes responsive design incredibly easy. You can use media queries or the repeat() function with auto-fit or auto-fill:
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+```
+
+## Conclusion
+
+CSS Grid is an incredibly powerful tool for creating complex layouts with minimal code. It provides precise control over how elements are positioned and sized, making it perfect for everything from simple card layouts to complex dashboard interfaces.

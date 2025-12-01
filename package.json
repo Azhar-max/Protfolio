@@ -1,0 +1,52 @@
+{
+  "name": "azhar-professional-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Azhar Ali Shah - Software Engineer, UI/UX Designer, and Cybersecurity Expert",
+  "keywords": [
+    "portfolio",
+    "react",
+    "vite",
+    "developer",
+    "software-engineer",
+    "ui-ux",
+    "cybersecurity"
+  ],
+  "author": "Azhar Ali Shah",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview-build": "vite preview --port 5173",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "git": "^0.1.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^6.30.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-react": "^7.28.5",
+    "@mdx-js/react": "^2.3.0",
+    "@mdx-js/rollup": "^2.3.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@vitejs/plugin-react": "^4.3.3",
+    "babel-jest": "^30.2.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "vite": "^6.4.1"
+  }
+}

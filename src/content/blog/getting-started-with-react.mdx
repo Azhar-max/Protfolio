@@ -1,0 +1,66 @@
+---
+title: Getting Started with React Hooks
+date: 2023-05-15
+excerpt: Learn how to use React Hooks to simplify your functional components and manage state effectively.
+tags: ["React", "JavaScript", "Hooks"]
+---
+
+# Getting Started with React Hooks
+
+React Hooks have revolutionized the way we write React components. They allow us to use state and other React features without writing a class component.
+
+## What are React Hooks?
+
+Hooks are functions that let you "hook into" React state and lifecycle features from function components. They were introduced in React 16.8 and have since become the standard way to write React components.
+
+## useState Hook
+
+The useState hook allows you to add state to functional components:
+
+```jsx
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+
+## useEffect Hook
+
+The useEffect hook lets you perform side effects in function components:
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+    // Update the document title using the browser API
+    document.title = `You clicked ${count} times`;
+  });
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+
+## Conclusion
+
+React Hooks provide a more direct API to the React concepts you already know: props, state, context, refs, and lifecycle. They offer a powerful and expressive way to compose behavior instead of having to follow the rigid structure of class components.
