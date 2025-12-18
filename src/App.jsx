@@ -14,6 +14,7 @@ import ProjectCaseStudy from './pages/ProjectCaseStudy'
 import BlogPost from './pages/BlogPost'
 import Footer from './components/Footer'
 import NotFound from './pages/NotFound'
+import Admin from './components/Admin'
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
@@ -59,6 +60,7 @@ export default function App() {
             <Route path="/resume" element={<Resume />} />
             <Route path="/projects/:id" element={<ProjectCaseStudy />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

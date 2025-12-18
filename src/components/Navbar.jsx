@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Navbar({ theme, toggleTheme }) {
   return (
@@ -15,6 +16,7 @@ export default function Navbar({ theme, toggleTheme }) {
         <a href="#projects" style={{color:'var(--muted)',textDecoration:'none'}}>Projects</a>
         <a href="#blog" style={{color:'var(--muted)',textDecoration:'none'}}>Blog</a>
         <a href="#contact" style={{color:'var(--muted)',textDecoration:'none'}}>Contact</a>
+        <Link to="/admin" style={{color:'var(--muted)',textDecoration:'none'}}>Admin</Link>
         <button 
           onClick={toggleTheme}
           className="theme-toggle"

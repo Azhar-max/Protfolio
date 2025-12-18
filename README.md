@@ -108,6 +108,50 @@ Test files are located in the `__tests__` directory, organized by component.
 6. The start command is set to `npm start` which serves the `dist` directory
 7. Deploy!
 
+### Custom Domain Configuration
+
+1. After deployment, go to your Railway project dashboard
+2. Navigate to Settings > Domains
+3. Click "Add Domain" and enter your custom domain
+4. Railway will provide DNS records to add to your domain registrar
+5. Add the provided CNAME record to your DNS settings
+6. Wait for DNS propagation (5-30 minutes)
+7. Railway will automatically provision a Let's Encrypt SSL certificate
+8. HTTP traffic will automatically redirect to HTTPS
+
+### Validation Steps
+
+After deployment, verify that your site is working correctly:
+
+1. **SSL Verification**:
+   - Visit your deployed site (https://your-app.up.railway.app)
+   - Check for the padlock icon in the browser address bar
+   - Click the padlock to view certificate details
+
+2. **HTTP/2 Support Check**:
+   - Open Developer Tools (F12)
+   - Go to the Network tab
+   - Reload the page
+   - Right-click on column headers and ensure "Protocol" is checked
+   - Look for "h2" in the Protocol column
+
+3. **Command-Line Validation**:
+   ```bash
+   # Check SSL certificate details
+   openssl s_client -connect your-app.up.railway.app:443 -servername your-app.up.railway.app
+   
+   # Check HTTP/2 support
+   curl -I --http2 https://your-app.up.railway.app
+   
+   # Verbose SSL information
+   curl -v https://your-app.up.railway.app
+   ```
+
+4. **Performance Validation**:
+   - Run Lighthouse audit in Chrome DevTools
+   - Check for any console errors
+   - Verify all assets load correctly
+
 ### Manual Deployment
 
 1. Build the project:
