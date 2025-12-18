@@ -98,6 +98,16 @@ Test files are located in the `__tests__` directory, organized by component.
 
 ## 🚀 Deployment
 
+### Railway Deployment (Recommended)
+
+1. Push your code to a GitHub repository
+2. Sign up/in to [Railway](https://railway.app)
+3. Create a new project and import your repository
+4. Railway will automatically detect the Vite framework
+5. The build command is set to `npm run build`
+6. The start command is set to `npm start` which serves the `dist` directory
+7. Deploy!
+
 ### Manual Deployment
 
 1. Build the project:
@@ -168,4 +178,4 @@ MIT License
 
 Azhar Ali Shah - [@LinkedIn](https://www.linkedin.com/in/azhar-ali-shah-72a4571b8/) - azharalishah405@gmail.com
 
-Project Link: [https://github.com/Azhar-max/azhar-portfolio](https://github.com/Azhar-max/azhar-
+Project Link: [https://github.com/Azhar-max/azhar-portfolio](https://github.com/Azhar-max/azhar-portfolio)
