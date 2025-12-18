@@ -5,8 +5,8 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Azhar Ali Shah",
-    "url": "https://azhar-portfolio.vercel.app",
-    "image": "https://azhar-portfolio.vercel.app/src/assets/profile.png",
+    "url": "",
+    "image": "/src/assets/profile.png",
     "sameAs": [
       "https://www.linkedin.com/in/azhar-ali-shah-72a4571b8/",
       "https://github.com/Azhar-max"

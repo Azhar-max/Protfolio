@@ -10,7 +10,7 @@ export default function SEO({
   url
 }) {
   const location = useLocation()
-  const currentUrl = url || `https://azhar-portfolio.vercel.app${location.pathname}`
+  const currentUrl = url || `${window.location.origin}${location.pathname}`
   
   // Update document title
   React.useEffect(() => {
