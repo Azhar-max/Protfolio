@@ -63,9 +63,11 @@ src/
 
 ### Available Scripts
 
-- `npm run dev` - Starts the development server
+- `npm run dev` - Starts the development server with HTTPS certificates
 - `npm run build` - Builds the production-ready application
 - `npm run preview` - Previews the production build locally
+- `npm run start` - Starts the production HTTP/2 server
+- `npm run validate` - Validates TLS and HTTP/2 configuration
 - `npm run lint` - Runs ESLint to check for code issues
 - `npm test` - Runs the test suite
 - `npm run test:watch` - Runs tests in watch mode
@@ -119,6 +121,47 @@ Test files are located in the `__tests__` directory, organized by component.
 7. Railway will automatically provision a Let's Encrypt SSL certificate
 8. HTTP traffic will automatically redirect to HTTPS
 
+### HTTP/2 Server (Alternative Deployment)
+
+For a standalone HTTP/2 server with proper TLS configuration:
+
+1. Build the project:
+   ```bash
+   npm run build
+   ```
+
+2. Start the HTTP/2 server:
+   ```bash
+   npm start
+   ```
+
+3. Access your site at `https://localhost:8443`
+
+4. The server includes:
+   - HTTP/2 support with ALPN
+   - TLS 1.2/1.3 with strong cipher suites
+   - Admin endpoint with authentication
+   - Health check endpoints
+
+### Admin Access
+
+The HTTP/2 server includes an admin endpoint with authentication:
+
+1. Login to get an authentication token:
+   ```bash
+   curl -X POST https://localhost:8443/admin/login \
+     -H "Content-Type: application/json" \
+     -d '{"username":"admin","password":"admin123"}' \
+     --insecure
+   ```
+
+2. Use the returned token to access the admin endpoint:
+   ```bash
+   curl -H "Authorization: Bearer YOUR_TOKEN_HERE" \
+     https://localhost:8443/admin \
+     --insecure
+   ```
+
 ### Validation Steps
 
 After deployment, verify that your site is working correctly:
@@ -147,7 +190,13 @@ After deployment, verify that your site is working correctly:
    curl -v https://your-app.up.railway.app
    ```
 
-4. **Performance Validation**:
+4. **Automated Testing**:
+   Run the built-in HTTP/2 functionality tests:
+   ```bash
+   npm run test-http2
+   ```
+
+5. **Performance Validation**:
    - Run Lighthouse audit in Chrome DevTools
    - Check for any console errors
    - Verify all assets load correctly
