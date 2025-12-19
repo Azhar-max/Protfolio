@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import mdx from '@mdx-js/rollup'
 import fs from 'fs'
 import path from 'path'
 
@@ -16,20 +15,25 @@ if (fs.existsSync(keyPath) && fs.existsSync(certPath)) {
   }
 }
 
-export default defineConfig({
-  plugins: [
-    react(),
-    mdx({
-      providerImportSource: '@mdx-js/react'
-    })
-  ],
-  build: {
-    outDir: 'dist',
-    sourcemap: true
-  },
-  server: {
-    host: 'localhost',
-    port: 5173,
-    ...sslConfig
+// Use dynamic import for MDX to avoid ESM/CJS compatibility issues
+export default defineConfig(async () => {
+  const mdx = await import('@mdx-js/rollup')
+  
+  return {
+    plugins: [
+      react(),
+      mdx.default({
+        providerImportSource: '@mdx-js/react'
+      })
+    ],
+    build: {
+      outDir: 'dist',
+      sourcemap: true
+    },
+    server: {
+      host: 'localhost',
+      port: 5173,
+      ...sslConfig
+    }
   }
 })
